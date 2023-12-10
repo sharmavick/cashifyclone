@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lato&display=swap");
+
+.searchicon {
+  font-size: 16px;
+}
+
+.search-container {
+  background-color: #f5f3f4;
+  border-radius: 6px;
+}
+
+.searchicon {
+  width: 22px;
+  height: 24px;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+:root {
+  --common-color: #3490dc;
+  --common-text-color: #ffffff;
+  --common-font-size: 16px;
+  --common-line-height: 1.5rem;
+}
+
+.web-text {
+  font-size: var(--common-font-size);
+}
+
+.btn {
+  background-color: #42c8b7;
+  font-weight: 700;
+  line-height: 20px;
+  color: white;
+}
+.nav-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #4b1b78;
+  color: white;
+  font-weight: bold;
+}
+
+#navbar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Adjust z-index as needed */
+  background-color: #fff; /* Adjust background color as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a subtle effect */
+}
+
+/* drop */
+.drop-down-text {
+  font-family: "Inter", sans-serif;
+  font-size: var(--common-font-size);
+}
+
+.services {
+  font-family: "Inter", sans-serif;
+}
+
+.service-main {
+  padding: 0px 0px 70px 0px;
+  max-width: 1280px;
+  margin-top: 40px !important;
+}
+
+/* product card */
+.card-head {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.save {
+  margin-top: -15px;
+  color: green;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+}
+.product-card {
+  width: 240px;
+  height: 370px;
+}
+
+.product-sec {
+  max-width: 1280px;
+}
+
+.view-all {
+  color: #42c8b7;
+  margin-right: 40px;
+}
+/* accord */
+.accord {
+  padding: 16px 0 0 0;
+  max-width: 1280px;
+}
+
+/* .accord-btn {
+  background-color: grey;
+  border: 1px solid;
+  outline: none;
+} */
+
+.right-btn {
+  top: 199px;
+    right: -3px;
+    font-size: 30px;
+}
+.left-btn{
+  top: 199px;
+    left: -9px;
+    font-size: 30px;
+}
+
+/* scroller */
+.scroller {
+  background-color: #42c8b7;
+}
+
+/* store */
+.icon-blue {
+  fill: blue;
+  font-size: 26px;
+}
+.pincode-input {
+  background-color: #f7f7f7;
+  margin-top: 21px;
+  margin-left: 26px;
+  width: 95%;
+}
+/* pincode */
+
+.pintext {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: gray;
+}
+.caption {
+  background-color: #42c8b7;
+
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  height: 44px;
+  line-height: 44px;
+  outline: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  font-weight: 600;
+  z-index: 9;
+  border: 0;
+}
+.caption2 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* ex */
+
+.explore{
+  margin-top: 130px;
+}
+
+.bg-secondary{
+ background-color: rgb(15,15,15); 
+ 
+}
+.bg-gradient{
+  background: rgb(133,132,164);
+background: linear-gradient(0deg, rgba(133,132,164,1) 0%, rgba(8,9,11,1) 33%, rgba(107,116,117,1) 100%);
+}
+
+.review-head{
+  font-size: 2.25rem;
+    line-height: 2.75rem;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+
+}
+
+.num{
+  color: #42c8b7;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+/* footer */
+.footer{
+  background-color: #F7F7F7;
+}
+.footer-li{
+  font-weight: 400;
+  font-size: .75rem;
+  line-height: 1rem;
+}
+
+.bg-primary{
+  background-color: #42c8b7
+}
+
+.pin-input{
+  margin-left: -24px;
+}

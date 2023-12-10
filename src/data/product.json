@@ -1,0 +1,64 @@
+{
+    "cards": [
+        {
+            "image": "https://img.freepik.com/premium-photo/smartphone-3d-modelling_274824-1299.jpg?w=740",
+            "title": "Apple iPhone 13-Refubished",
+            "rating": 5,
+            "price": {
+                "current": "$41,099",
+                "original": "$699",
+                "discount": "44% OFF",
+                "savings": "save ₹3999"
+            },
+            "sale": "Black Friday sale"
+        },
+        {
+            "image": "https://s3no.cashify.in/cashify/product/img/xxhdpi/55237aff-b449.jpg?p=es3sq&s=es",
+            "title": "Apple iPhone 13-Refubished",
+            "rating": 5,
+            "price": {
+                "current": "$41,099",
+                "original": "$699",
+                "discount": "41% OFF",
+                "savings": "save ₹3999"
+            },
+            "sale": "Black Friday sale"
+        },
+        {
+            "image": "https://s3no.cashify.in/cashify/product/img/xxhdpi/d8394bf8-e922.jpg?p=es3sq&s=es",
+            "title": "Apple iPhone 13-Refubished",
+            "rating": 5,
+            "price": {
+                "current": "$41,099",
+                "original": "$699",
+                "discount": "48% OFF",
+                "savings": "save ₹3999"
+            },
+            "sale": "Black Friday sale"
+        },
+        {
+            "image": "https://s3no.cashify.in/cashify/product/img/xxhdpi/2d1db6af-f3e9.jpg?p=es3sq&s=es",
+            "title": "Apple iPhone 13-Refubished",
+            "rating": 5,
+            "price": {
+                "current": "$41,099",
+                "original": "$699",
+                "discount": "49% OFF",
+                "savings": "save ₹3999"
+            },
+            "sale": "Black Friday sale"
+        },
+        {
+            "image": "https://s3no.cashify.in/cashify/product/img/xxhdpi/0517738f-b929.jpg?p=es3sq&s=es",
+            "title": "Apple iPhone 13-Refubished",
+            "rating": 5,
+            "price": {
+                "current": "$41,099",
+                "original": "$699",
+                "discount": "44% OFF",
+                "savings": "save ₹3999"
+            },
+            "sale": "Black Friday sale"
+        }
+    ]
+}
