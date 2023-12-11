@@ -4,20 +4,70 @@ import { CiStar } from "react-icons/ci";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa";
-import { useRef, useState } from "react"; // Assuming you have the react-icons library installed
+import { useRef, useState, useEffect } from "react"; // Assuming you have the react-icons library installed
 function Store() {
   const scrollContainerRef = useRef(null);
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft += scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollLeft +=
+        scrollContainerRef.current.clientWidth;
     }
   };
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft -= scrollContainerRef.current.clientWidth;
+      scrollContainerRef.current.scrollLeft -=
+        scrollContainerRef.current.clientWidth;
     }
+  };
+  // pincode
+  const [pincode, setPincode] = useState("");
+  const [isValid, setIsValid] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response =
+          await fetch(`https://api.postalpincode.in/pincode/{PINCODE}
+        `);
+
+        const data = await response.json();
+
+        setIsValid(data.valid);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    // Fetch data when pincode changes
+    fetchData();
+  }, [pincode]);
+
+  // habdler
+  const handlePincodeChange = (event) => {
+    setPincode(event.target.value);
+  };
+
+  // pincode dropdown
+  // Sample data for states, districts, and branches
+  const states = ["State 1", "State 2", "State 3"];
+  const districts = ["District 1", "District 2", "District 3"];
+  const branches = ["Branch 1", "Branch 2", "Branch 3"];
+
+  // State to keep track of selected values
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedDistrict, setSelectedDistrict] = useState("");
+  const [selectedBranch, setSelectedBranch] = useState("");
+
+  // condition rendering state
+  // State to manage the visibility of additional content
+  const [showAdditionalContent, setShowAdditionalContent] = useState(false);
+
+  const handleArrowClick = () => {
+    // Perform any actions you want when the arrow icon is clicked
+    // In this example, we're toggling the visibility of additional content
+    setShowAdditionalContent(!showAdditionalContent);
   };
   return (
     <>
@@ -42,18 +92,93 @@ function Store() {
         </div>
         {/* pincoder */}
         <div className="w-full bg-surface-light p-2 rounded-lg relative h-56 pincode-input">
-          <div className="pincode-input relative w-full sm:w-80 pt-2 sm:pt-7 px-2.5 sm:ps-4">
-            <div className="w-full bg-white rounded-md py-1.5 px-2 shadow-small pin-input">
+          <div className="grid grid-cols-2 gap-4 relative w-full m-auto pincode-input sm:w-80 pt-2 sm:pt-7 px-2.5 sm:ps-4">
+            <div className=" w-full bg-white rounded-md py-1.5 px-2 shadow-small pin-input col-span-6">
               <div className="flex items-center relative px-0 py-2">
                 <input
                   type="text"
                   placeholder="Enter Pincode"
+                  value={pincode}
+                  onChange={handlePincodeChange}
                   className="peer p-0 block w-full outline-none ring-0 focus:outline-none focus:ring-0 bg-transparent border-none placeholder:text-surface-text/70"
                 />
-                <FaArrowCircleRight />
+                <FaArrowCircleRight onClick={handleArrowClick} />
               </div>
             </div>
+            {showAdditionalContent && (
+              <div className="flex col-span-6 ">
+                <div className="mr-4">
+                  <label
+                    htmlFor="state"
+                    className="block text-sm font-medium text-gray-600"
+                  >
+                    State
+                  </label>
+                  <select
+                    id="state"
+                    name="state"
+                    value={selectedState}
+                    onChange={(e) => setSelectedState(e.target.value)}
+                    className="mt-1 block w-32 px-2 py-1 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+                  >
+                    <option value="">Select State</option>
+                    {states.map((state) => (
+                      <option key={state} value={state}>
+                        {state}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="mr-4">
+                  <label
+                    htmlFor="district"
+                    className="block text-sm font-medium text-gray-600"
+                  >
+                    District
+                  </label>
+                  <select
+                    id="district"
+                    name="district"
+                    value={selectedDistrict}
+                    onChange={(e) => setSelectedDistrict(e.target.value)}
+                    className="mt-1 block w-32 px-2 py-1 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+                  >
+                    <option value="">Select District</option>
+                    {districts.map((district) => (
+                      <option key={district} value={district}>
+                        {district}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="branch"
+                    className="block text-sm font-medium text-gray-600"
+                  >
+                    Branch
+                  </label>
+                  <select
+                    id="branch"
+                    name="branch"
+                    value={selectedBranch}
+                    onChange={(e) => setSelectedBranch(e.target.value)}
+                    className="mt-1 block w-32 px-2 py-1 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+                  >
+                    <option value="">Select Branch</option>
+                    {branches.map((branch) => (
+                      <option key={branch} value={branch}>
+                        {branch}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            )}
           </div>
+          {/* store card */}
           <div className="flex items-center relative w-full">
             <div className="flex items-center overflow-x-scroll scrollbar-hide">
               <div
@@ -194,6 +319,8 @@ function Store() {
           </div>
         </div>
       </div>
+
+      {/* pincode dropdown */}
     </>
   );
 }
